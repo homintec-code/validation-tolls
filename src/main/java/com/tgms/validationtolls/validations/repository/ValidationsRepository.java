@@ -17,7 +17,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
     // Custom query methods if necessary
 
     @Query("SELECT COUNT(v) FROM Validation v WHERE " +
-            "v.vacation.id = :vacationId AND " +
+            "v.vacationId = :vacationId AND " +
             "v.es = :es AND " +
             "v.ptrac = :ptrac AND " +
             "v.isGate = false AND " +
@@ -30,7 +30,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT COUNT(v) FROM Validation v WHERE " +
-            "v.vacation.id = :vacationId AND " +
+            "v.vacationId = :vacationId AND " +
             "v.ptrac = :ptrac AND " +
             "v.isGate = false AND " +
             "v.isExo = false")
@@ -41,7 +41,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT COUNT(v) FROM Validation v WHERE " +
-            "v.vacation.id = :vacationId AND " +
+            "v.vacationId = :vacationId AND " +
             "v.es = :es AND " +
             "v.isGate = false AND " +
             "v.isExo = false")
@@ -53,14 +53,14 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT COUNT(v) FROM Validation v WHERE " +
-            "v.vacation.id = :vacationId AND " +
+            "v.vacationId = :vacationId AND " +
             "v.isViolation = true")
     Long countByViolation(
             @Param("vacationId") Long vacationId);
 
 
     @Query("SELECT COUNT(v) FROM Validation v WHERE " +
-            "v.vacation.id = :vacationId AND " +
+            "v.vacationId = :vacationId AND " +
             "v.isExo = true")
     Long countByIsExo(
             @Param("vacationId") Long vacationId);
@@ -68,21 +68,21 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT COUNT(v) FROM Validation v WHERE " +
-            "v.vacation.id = :vacationId AND " +
+            "v.vacationId = :vacationId AND " +
             "v.isGate = true")
     Long countByIsGate(
             @Param("vacationId") Long vacationId);
 
 
     @Query("SELECT COALESCE(SUM(v.prix), 0) FROM Validation v " +
-            "WHERE v.vacation.id = :vacationId " +
+            "WHERE v.vacationId = :vacationId " +
             "AND v.isGate = false " +
             "AND v.isExo = false")
     Double sumValidationByPercepteurTypeIsExoFalse(
             @Param("vacationId") Long vacationId);
 
     @Query("SELECT COALESCE(SUM(v.prix), 0) FROM Validation v " +
-            "WHERE v.vacation.id = :vacationId " +
+            "WHERE v.vacationId = :vacationId " +
             "AND v.isExo = true")
     Double sumValidationByIsExoTrue(
             @Param("vacationId") Long vacationId);
@@ -90,14 +90,14 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
     Optional<Validation> findLatestByPercepteurId(Long percepteurId);
 
 
-    @Query("SELECT v FROM Validation v WHERE v.vacation.id = :vacationId")
+    @Query("SELECT v FROM Validation v WHERE v.vacationId = :vacationId")
     List<Validation> queryValidationsByVacation(@Param("vacationId") Long vacationId);
 
     Validation queryValidationsByVoie_Id(Long voieId);
 
     Long voie(Voie voie);
 
-    @Query("SELECT COUNT(v) FROM Validation v WHERE v.voie.id = :voieId AND FUNCTION('DATE', v.date) = :today AND v.isExo = false")
+    @Query("SELECT COUNT(v) FROM Validation v WHERE v.voieId = :voieId AND FUNCTION('DATE', v.date) = :today AND v.isExo = false")
     Long countByVoieIdAndDate(@Param("voieId") Long voieId, @Param("today") LocalDate today);
 
     @Query(value = "SELECT SUM(prix) FROM validation " +
@@ -135,7 +135,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT v FROM Validation v " +
-            "WHERE v.percepteur.id = :percepteurId " +
+            "WHERE v.percepteurId = :percepteurId " +
             "AND v.dateApi >= :dateStart " +
             "AND v.dateApi <= :dateEnd " +
             "ORDER BY v.createdAt DESC")
@@ -146,10 +146,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
     );
 
     @Query("SELECT v FROM Validation v " +
-            "LEFT JOIN FETCH v.voie " +
-            "LEFT JOIN FETCH v.percepteur " +
-            "LEFT JOIN FETCH v.vacation " +
-            "WHERE v.vacation.id = :vacationId " +
+            "WHERE v.vacationId = :vacationId " +
             "ORDER BY v.createdAt DESC " +
             "LIMIT 1") // Ensure only one result is returned
     Optional<Validation> findLatestByVacationId(@Param("vacationId") Long vacationId);
@@ -157,10 +154,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT v FROM Validation v " +
-            "LEFT JOIN FETCH v.voie " +
-            "LEFT JOIN FETCH v.percepteur " +
-            "LEFT JOIN FETCH v.vacation " +
-            "WHERE v.vacation.id = :vacationId " +
+            "WHERE v.vacationId = :vacationId " +
             "ORDER BY v.createdAt DESC " +
             "LIMIT 1") // Ensure only one result is returned
     Validation findByVacationIdByLimt(@Param("vacationId") Long vacationId);
@@ -168,10 +162,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT v FROM Validation v " +
-            "LEFT JOIN FETCH v.voie " +
-            "LEFT JOIN FETCH v.percepteur " +
-            "LEFT JOIN FETCH v.vacation " +
-            "WHERE v.vacation.id = :vacation_id " +
+            "WHERE v.vacationId = :vacation_id " +
             "AND v.date >= :dateStart " +
             "AND v.date <= :dateEnd " +  // Fixed: Changed `>=` to `<=` for dateEnd
             "AND v.isExo = :isExo ")  // Ensure this matches the field name in Java
@@ -183,7 +174,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
             Pageable pageable);
 
     @Query("SELECT COUNT(v) FROM Validation v " +
-            "WHERE v.vacation.id = :vacation_id " +
+            "WHERE v.vacationId = :vacation_id " +
             "AND v.date >= :dateStart " +
             "AND v.date <= :dateEnd " +
             "AND v.isExo = :isExo")
@@ -198,10 +189,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT v FROM Validation v " +
-            "LEFT JOIN FETCH v.voie " +
-            "LEFT JOIN FETCH v.percepteur " +
-            "LEFT JOIN FETCH v.vacation " +
-            "WHERE v.vacation.id = :vacation_id " +
+            "WHERE v.vacationId = :vacation_id " +
             "AND v.isExo = :isExo ")  // Ensure this matches the field name in Java
     List<Validation> findValidationsByVacation(
             @Param("vacation_id") Long vacation_id,
@@ -210,7 +198,7 @@ public interface ValidationsRepository extends JpaRepository<Validation, Long> {
 
 
     @Query("SELECT COUNT(v) FROM Validation v " +
-            "WHERE v.vacation.id = :vacation_id " +
+            "WHERE v.vacationId = :vacation_id " +
             "AND v.isExo = :isExo")
     long countValidationsByVacation(
             @Param("vacation_id") Long vacation_id,

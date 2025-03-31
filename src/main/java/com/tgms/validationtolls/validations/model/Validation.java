@@ -99,29 +99,21 @@ public class Validation  extends Audit {
     @Column(nullable = false)
     private String nomenclature;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "percepteur_id", nullable = false)
-    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @JsonIgnore
-    private Percepteur percepteur;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "voie_id", nullable = false)
-    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    ///@JsonIgnore
-    private Voie voie;
+    @Column(nullable = true,name = "percepteur_id")
+    private int percepteurId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "vacation_id", nullable = false)
-    //@JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
-    @JsonIgnore
-    private Vacation vacation;
+
+    @Column(nullable = true,name = "voie_id")
+    private int voieId;
+
+    @Column(name = "vacation_id", nullable = false)
+    private int vacationId;
 
 
     private boolean synced = false;
     private LocalDateTime lastSyncAttempt;
     private int syncAttemptCount;
-
 
     public void setGate(boolean gate) {
         isGate = gate;

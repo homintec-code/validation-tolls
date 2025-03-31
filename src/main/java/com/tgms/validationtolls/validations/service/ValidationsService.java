@@ -52,18 +52,12 @@ public class ValidationsService {
         // Check for existing validation
 
         // Parse IDs and fields
-        int vacationId = FieldParserUtils.parseNumericField(validationDto.getVacationId(), 0);
-        int voieId = FieldParserUtils.parseNumericField(validationDto.getVoieId(), 0);
-        int percepteurId = FieldParserUtils.parseNumericField(validationDto.getPercepteurId(), 0);
         int prix = FieldParserUtils.parseNumericField(validationDto.getPrix(), 0);
         int es = FieldParserUtils.parseNumericField(validationDto.getEs(), 2);
         int essieuCapter = FieldParserUtils.parseNumericField(validationDto.getEssieuCapter(), 2);
         int essieuCorriger = FieldParserUtils.parseNumericField(validationDto.getEssieuCorriger(), essieuCapter);
 
         // Fetch related entities in parallel
-        Vacation vacation = vacationService.findVacationById((long) vacationId);
-        Voie voie = voieService.findOne((long) voieId);
-         Percepteur percepteur = percepteurService.findOne((long) percepteurId);
         LocalTime time = LocalTime.now();
         LocalDate localDate = LocalDate.now();
         LocalDateTime dateTime = LocalDateTime.now();
@@ -93,9 +87,9 @@ public class ValidationsService {
         validation.setIsLoop(0);
         validation.setDateApi(dateTime);
         validation.setNomenclature(validationDto.getNomenclature());
-        validation.setVacation(vacation);
-        validation.setVoie(voie);
-        validation.setPercepteur(percepteur);
+        validation.setVacationId(validationDto.getVacationId());
+        validation.setVoieId(validationDto.getVoieId());
+        validation.setPercepteurId(validationDto.getPercepteurId());
 
         // Save the validation entity
         try {

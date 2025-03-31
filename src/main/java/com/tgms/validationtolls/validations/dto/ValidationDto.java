@@ -49,15 +49,15 @@ public class ValidationDto {
 
     private String nomenclature;
 
-    private String voieId;
+    private int voieId;
 
-    private String percepteurId;
+    private int percepteurId;
 
     private String caisse;
 
     private String societe;
     private String ticketNumber;
-    private String vacationId;
+    private int vacationId;
 
     @Setter
     public static class PercepteurDTO {

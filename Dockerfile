@@ -6,8 +6,8 @@ WORKDIR /workspace/app
 # Copy build files
 COPY gradlew .
 COPY gradle gradle
-COPY build.gradle.kts .
-COPY settings.gradle.kts .
+COPY build.gradle .
+COPY settings.gradle .
 COPY src src
 
 # Build the application
@@ -32,4 +32,4 @@ USER spring:spring
 
 ENTRYPOINT ["java", "org.springframework.boot.loader.JarLauncher"]
 
-EXPOSE 8080
+EXPOSE 8082
