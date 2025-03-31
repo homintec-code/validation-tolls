@@ -4,10 +4,12 @@ import com.tgms.validationtolls.Audit;
 import com.tgms.validationtolls.validations.enums.LogingStatus;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.time.LocalTime;
 import java.util.Date;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "logs")
 @Data

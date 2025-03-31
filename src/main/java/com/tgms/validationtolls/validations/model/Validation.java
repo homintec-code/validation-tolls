@@ -1,14 +1,15 @@
 package com.tgms.validationtolls.validations.model;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.tgms.validationtolls.Audit;
 import jakarta.persistence.*;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.Setter;
 
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+@EqualsAndHashCode(callSuper = true)
 @Entity
 @Table(name = "validation")
 @Data
@@ -114,19 +115,6 @@ public class Validation  extends Audit {
     private boolean synced = false;
     private LocalDateTime lastSyncAttempt;
     private int syncAttemptCount;
-
-    public void setGate(boolean gate) {
-        isGate = gate;
-    }
-
-    public boolean isExo() {
-        return isExo;
-    }
-
-    public void setExo(boolean exo) {
-        isExo = exo;
-    }
-
     // Getters and Setters
     // ...
 }
