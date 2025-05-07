@@ -43,16 +43,15 @@ public class SecurityConfig {
                                 "api/v1/export/validations",
                                 "/api/v1/print/print-html",
                                 "/api/v1/print/text-print",
-                                "/api/v1/validation/query"
+                                "/api/v1/validation/query",
+                                "/api/v1/tickets/print"
                                 ).permitAll() // Allow unauthenticated access to /auth/register
                         .anyRequest().authenticated() // All other endpoints require authentication
                 )
                 .sessionManagement(session -> session
                         .sessionCreationPolicy(SessionCreationPolicy.STATELESS) // No session
                 )
-                .cors() // Enable CORS support
-        ;
-
+                .cors(cors -> cors.configurationSource(corsConfigurationSource()));// Enable CORS support
        // http.addFilterBefore(jwtRequestFilter, UsernamePasswordAuthenticationFilter.class);
         return http.build();
     }

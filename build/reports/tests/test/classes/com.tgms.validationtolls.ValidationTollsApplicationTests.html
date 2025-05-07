@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta http-equiv="x-ua-compatible" content="IE=edge"/>
+<title>Test results - ValidationTollsApplicationTests</title>
+<link href="../css/base-style.css" rel="stylesheet" type="text/css"/>
+<link href="../css/style.css" rel="stylesheet" type="text/css"/>
+<script src="../js/report.js" type="text/javascript"></script>
+</head>
+<body>
+<div id="content">
+<h1>ValidationTollsApplicationTests</h1>
+<div class="breadcrumbs">
+<a href="../index.html">all</a> &gt; 
+<a href="../packages/com.tgms.validationtolls.html">com.tgms.validationtolls</a> &gt; ValidationTollsApplicationTests</div>
+<div id="summary">
+<table>
+<tr>
+<td>
+<div class="summaryGroup">
+<table>
+<tr>
+<td>
+<div class="infoBox" id="tests">
+<div class="counter">1</div>
+<p>tests</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="failures">
+<div class="counter">0</div>
+<p>failures</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="ignored">
+<div class="counter">0</div>
+<p>ignored</p>
+</div>
+</td>
+<td>
+<div class="infoBox" id="duration">
+<div class="counter">0.568s</div>
+<p>duration</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+</td>
+<td>
+<div class="infoBox success" id="successRate">
+<div class="percent">100%</div>
+<p>successful</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="tab-container">
+<ul class="tabLinks">
+<li>
+<a href="#">Tests</a>
+</li>
+<li>
+<a href="#">Standard output</a>
+</li>
+<li>
+<a href="#">Standard error</a>
+</li>
+</ul>
+<div class="tab">
+<h2>Tests</h2>
+<table>
+<thead>
+<tr>
+<th>Test</th>
+<th>Duration</th>
+<th>Result</th>
+</tr>
+</thead>
+<tr>
+<td class="success">contextLoads()</td>
+<td class="success">0.568s</td>
+<td class="success">passed</td>
+</tr>
+</table>
+</div>
+<div class="tab">
+<h2>Standard output</h2>
+<span class="code">
+<pre>17:54:12.349 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.tgms.validationtolls.ValidationTollsApplicationTests]: ValidationTollsApplicationTests does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+17:54:12.478 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.tgms.validationtolls.ValidationTollsApplication for test class com.tgms.validationtolls.ValidationTollsApplicationTests
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.4.4)
+
+2025-05-07T17:54:12.917+01:00  INFO 20044 --- [validation-tolls] [    Test worker] c.t.v.ValidationTollsApplicationTests    : Starting ValidationTollsApplicationTests using Java 21.0.6 with PID 20044 (started by macbookpro in /Users/macbookpro/IdeaProjects/validation-tolls)
+2025-05-07T17:54:12.918+01:00  INFO 20044 --- [validation-tolls] [    Test worker] c.t.v.ValidationTollsApplicationTests    : No active profile set, falling back to 1 default profile: &quot;default&quot;
+2025-05-07T17:54:13.666+01:00  INFO 20044 --- [validation-tolls] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-05-07T17:54:13.767+01:00  INFO 20044 --- [validation-tolls] [    Test worker] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 9 JPA repository interfaces.
+2025-05-07T17:54:14.420+01:00  INFO 20044 --- [validation-tolls] [    Test worker] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-05-07T17:54:14.464+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.11.Final
+2025-05-07T17:54:14.502+01:00  INFO 20044 --- [validation-tolls] [    Test worker] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-05-07T17:54:14.771+01:00  INFO 20044 --- [validation-tolls] [    Test worker] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-05-07T17:54:14.796+01:00  INFO 20044 --- [validation-tolls] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-05-07T17:54:14.955+01:00  INFO 20044 --- [validation-tolls] [    Test worker] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@391dfe7c
+2025-05-07T17:54:14.957+01:00  INFO 20044 --- [validation-tolls] [    Test worker] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-05-07T17:54:15.003+01:00  WARN 20044 --- [validation-tolls] [    Test worker] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-05-07T17:54:15.004+01:00  WARN 20044 --- [validation-tolls] [    Test worker] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-05-07T17:54:15.020+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-05-07T17:54:16.406+01:00  INFO 20044 --- [validation-tolls] [    Test worker] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-05-07T17:54:16.527+01:00  INFO 20044 --- [validation-tolls] [    Test worker] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-05-07T17:54:16.832+01:00  INFO 20044 --- [validation-tolls] [    Test worker] o.s.d.j.r.query.QueryEnhancerFactory     : Hibernate is in classpath; If applicable, HQL parser will be used.
+Hibernate: select v1_0.`id`,v1_0.`caisse`,v1_0.`classe`,v1_0.`cmaes`,v1_0.`created_at`,v1_0.`date`,v1_0.`date_api`,v1_0.`es`,v1_0.`essieu_capter`,v1_0.`essieu_corriger`,v1_0.`heure`,v1_0.`is_exo`,v1_0.`is_gate`,v1_0.`is_loop`,v1_0.`is_valid`,v1_0.`is_violation`,v1_0.`last_sync_attempt`,v1_0.`nomenclature`,v1_0.`over`,v1_0.`penalite`,v1_0.`percepteur_id`,v1_0.`plaque`,v1_0.`plaque_percepteur`,v1_0.`prix`,v1_0.`ptrac`,v1_0.`ptt`,v1_0.`refer`,v1_0.`sens`,v1_0.`societe`,v1_0.`sync_attempt_count`,v1_0.`synced`,v1_0.`ticket_number`,v1_0.`type`,v1_0.`updated_at`,v1_0.`vacation_id`,v1_0.`visa`,v1_0.`voie_id` from `validation` v1_0 where not(v1_0.`synced`)
+2025-05-07T17:54:18.497+01:00  WARN 20044 --- [validation-tolls] [    Test worker] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-05-07T17:54:18.514+01:00 DEBUG 20044 --- [validation-tolls] [    Test worker] swordEncoderAuthenticationManagerBuilder : No authenticationProviders and no parentAuthenticationManager defined. Returning null.
+2025-05-07T17:54:18.751+01:00  WARN 20044 --- [validation-tolls] [    Test worker] thorizationManagerRequestMatcherRegistry : One of the patterns in [/api/v1/auth/signup, /api/v1/auth/signin, /api/v1/avcc, /api/v1/logs, /ws/**, /api/v1/logs/voies/bySite/forLabview, /api/v1/logs/voies/bySite, /api/v1/logs/voies/bySite/forLabview/gate, /socket.io, api/v1/ping, /api/v1/validation, /api/v1/validations, /api/v1/export/validations/byVacation, api/v1/validation/test/coupon/endVacation/**, api/v1/export/validations, /api/v1/print/print-html, /api/v1/print/text-print, /api/v1/validation/query, /api/v1/tickets/print] is missing a leading slash. This is discouraged; please include the leading slash in all your request matcher patterns. In future versions of Spring Security, leaving out the leading slash will result in an exception.
+2025-05-07T17:54:18.804+01:00 DEBUG 20044 --- [validation-tolls] [    Test worker] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with filters: DisableEncodeUrlFilter, WebAsyncManagerIntegrationFilter, SecurityContextHolderFilter, HeaderWriterFilter, CorsFilter, LogoutFilter, RequestCacheAwareFilter, SecurityContextHolderAwareRequestFilter, AnonymousAuthenticationFilter, SessionManagementFilter, ExceptionTranslationFilter, AuthorizationFilter
+2025-05-07T17:54:19.216+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.impl.StdSchedulerFactory      : Using default implementation for ThreadExecutor
+2025-05-07T17:54:19.227+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.core.SchedulerSignalerImpl    : Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2025-05-07T17:54:19.228+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.core.QuartzScheduler          : Quartz Scheduler v.2.3.2 created.
+2025-05-07T17:54:19.228+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.simpl.RAMJobStore             : RAMJobStore initialized.
+2025-05-07T17:54:19.229+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.core.QuartzScheduler          : Scheduler meta-data: Quartz Scheduler (v2.3.2) 'quartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 10 threads.
+  Using job-store 'org.quartz.simpl.RAMJobStore' - which does not support persistence. and is not clustered.
+
+2025-05-07T17:54:19.229+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler 'quartzScheduler' initialized from an externally provided properties instance.
+2025-05-07T17:54:19.229+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.impl.StdSchedulerFactory      : Quartz scheduler version: 2.3.2
+2025-05-07T17:54:19.229+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.core.QuartzScheduler          : JobFactory set to: org.springframework.scheduling.quartz.SpringBeanJobFactory@6799243b
+2025-05-07T17:54:19.312+01:00  INFO 20044 --- [validation-tolls] [    Test worker] .w.s.a.s.AnnotationActionEndpointMapping : Supporting [WS-Addressing August 2004, WS-Addressing 1.0]
+2025-05-07T17:54:19.354+01:00  INFO 20044 --- [validation-tolls] [    Test worker] o.s.s.quartz.SchedulerFactoryBean        : Starting Quartz Scheduler now
+2025-05-07T17:54:19.354+01:00  INFO 20044 --- [validation-tolls] [    Test worker] org.quartz.core.QuartzScheduler          : Scheduler quartzScheduler_$_NON_CLUSTERED started.
+2025-05-07T17:54:19.370+01:00  INFO 20044 --- [validation-tolls] [    Test worker] c.t.v.ValidationTollsApplicationTests    : Started ValidationTollsApplicationTests in 6.708 seconds (process running for 8.073)
+</pre>
+</span>
+</div>
+<div class="tab">
+<h2>Standard error</h2>
+<span class="code">
+<pre>Mockito is currently self-attaching to enable the inline-mock-maker. This will no longer work in future releases of the JDK. Please add Mockito as an agent to your build what is described in Mockito's documentation: https://javadoc.io/doc/org.mockito/mockito-core/latest/org/mockito/Mockito.html#0.3
+WARNING: A Java agent has been loaded dynamically (/Users/macbookpro/.gradle/caches/modules-2/files-2.1/net.bytebuddy/byte-buddy-agent/1.15.11/a38b16385e867f59a641330f0362ebe742788ed8/byte-buddy-agent-1.15.11.jar)
+WARNING: If a serviceability tool is in use, please run with -XX:+EnableDynamicAgentLoading to hide this warning
+WARNING: If a serviceability tool is not in use, please run with -Djdk.instrument.traceUsage for more information
+WARNING: Dynamic loading of agents will be disallowed by default in a future release
+</pre>
+</span>
+</div>
+</div>
+<div id="footer">
+<p>
+<div>
+<label class="hidden" id="label-for-line-wrapping-toggle" for="line-wrapping-toggle">Wrap lines
+<input id="line-wrapping-toggle" type="checkbox" autocomplete="off"/>
+</label>
+</div>Generated by 
+<a href="https://www.gradle.org">Gradle 8.13</a> at 7 mai 2025, 17:54:20</p>
+</div>
+</div>
+</body>
+</html>
